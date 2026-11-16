@@ -2,6 +2,10 @@
 
 Firmware für den **M5Stack Basic Core (ESP32)**, die die Abo-Limits eines Claude-Kontos (Pro/Max) auf dem Display anzeigt: das 5-Stunden-Fenster und die Wochenlimits in Prozent, jeweils mit der Zeit bis zum Zurücksetzen. Das Gerät verbindet sich per WLAN. Eingerichtet wird es über einen temporären Access Point mit Einrichtungsseite.
 
+<p align="center">
+  <img src="docs/screenshot-usage@2x.png" width="480" alt="Display mit drei Balken: Sitzung (5h) 83 %, Woche (alle Modelle) 57 %, Woche Sonnet 21 %, jeweils mit Reset-Countdown">
+</p>
+
 > **Hinweis:** Die Daten kommen vom nicht dokumentierten Endpunkt `https://api.anthropic.com/api/oauth/usage`, den auch Claude Code für `/usage` verwendet. Anthropic kann ihn jederzeit ändern. Das ist ein inoffizielles Projekt ohne Verbindung zu Anthropic.
 
 ## Funktionen
@@ -39,6 +43,8 @@ pio device monitor
    Die angezeigte URL im Browser öffnen, mit dem Claude-Konto anmelden und den angezeigten Code zurückkopieren. Das Skript prüft den neuen Token und gibt am Ende JSON aus. Es braucht nur die Python-Standardbibliothek.
 
 2. **Mit dem Gerät verbinden:** Beim ersten Start öffnet das Gerät den AP `ClaudeUsage-XXXX`. Passwort und QR-Code stehen auf dem Display. Die Einrichtungsseite öffnet sich automatisch, sonst `http://192.168.4.1/` aufrufen.
+
+   <img src="docs/screenshot-portal@2x.png" width="400" alt="Setup-Bildschirm mit WLAN-QR-Code, SSID, Passwort und Adresse der Einrichtungsseite">
 
 3. **Eintragen:** WLAN auswählen, Passwort eingeben und das JSON aus Schritt 1 unter „…oder JSON einfügen“ einfügen. Nach dem Speichern startet das Gerät neu.
 
